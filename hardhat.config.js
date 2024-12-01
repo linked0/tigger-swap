@@ -16,6 +16,13 @@ module.exports = {
          gas: 2100000,
          gasPrice: 8000000000
       },
+      devnet: {
+         url: process.env.DEVNET_URL,
+         accounts: [process.env.ADMIN_KEY],
+         chainId: parseInt(process.env.DEVNET_CHAIN_ID),
+         gas: 2100000,
+         gasPrice: 8000000000
+      },
       localnet: {
          url: process.env.LOCALNET_URL,
          accounts: [process.env.ADMIN_KEY],
