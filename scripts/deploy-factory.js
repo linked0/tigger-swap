@@ -76,6 +76,9 @@ async function deploy() {
    );
    await gtbTx.wait();
 
+   // Test for factoryInstance
+   console.log(`Factory allPairsLength: ${await factoryInstance.allPairsLength()}`);
+
    //Create Pair with Factory and Get Address
    const pairAddress= await factoryInstance.createPair(tokBoaInstance.address, gtbInstance.address);
    await pairAddress.wait();
