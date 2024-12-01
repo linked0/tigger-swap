@@ -16,8 +16,8 @@
     "deploy:sepolia": "hardhat run --network sepolia scripts/sepolia-deploy-factory.js",
     "deploy:testnet": "hardhat run --network testnet scripts/testnet-deploy-factory.js",
     "deploy:poohnet": "hardhat run --network poohnet scripts/poohnet-deploy-factory.js",
-    "deploy:localnet": "hardhat run --network localnet scripts/localnet-deploy-factory.js",
-    "deploy:devnet": "hardhat run --network devnet scripts/devnet-deploy-factory.js",
+    "deploy:localnet": "hardhat run --network localnet scripts/deploy-factory.js",
+    "deploy:devnet": "hardhat run --network devnet scripts/deploy-factory.js",
     "get-pair:localnet": "hardhat run --network localnet scripts/get-pair.js",
     "fee:testnet": "hardhat run --network testnet scripts/get-fee-to.js"
   },
