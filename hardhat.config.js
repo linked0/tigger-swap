@@ -13,8 +13,6 @@ module.exports = {
          url: process.env.TESTNET_URL,
          accounts: [process.env.ADMIN_KEY],
          chainId: parseInt(process.env.TESTNET_CHAIN_ID),
-         gas: 2100000,
-         gasPrice: 8000000000
       },
       devnet: {
          url: process.env.DEVNET_URL,
