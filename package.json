@@ -19,6 +19,7 @@
     "deploy:localnet": "hardhat run --network localnet scripts/deploy-factory.js",
     "deploy:devnet": "hardhat run --network devnet scripts/deploy-factory.js",
     "get-pair:localnet": "hardhat run --network localnet scripts/get-pair.js",
+    "get-pair:devnet": "hardhat run --network devnet scripts/get-pair.js",
     "fee:testnet": "hardhat run --network testnet scripts/get-fee-to.js"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
