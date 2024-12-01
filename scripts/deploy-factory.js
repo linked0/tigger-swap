@@ -45,30 +45,36 @@ async function deploy() {
    //Deploy Tokens
    const tokBoa = await ethers.getContractFactory('Token');
    const tokBoaInstance = await tokBoa.deploy('BOAAGORA', 'BOA');
+   await tokBoaInstance.deployed();
    console.log(`BOA_ADDRESS=${tokBoaInstance.address}`);
 
    const gta = await ethers.getContractFactory('Token');
    const gtaInstance = await gta.deploy('A Game Token', 'GT-A');
+   await gtaInstance.deployed();
    // console.log(`A Game Token deployed to : ${gtaInstance.address}`);
    console.log(`GTOKEN_ADDRESS=${gtaInstance.address}`);
 
    const gtb = await ethers.getContractFactory('Token');
    const gtbInstance = await gtb.deploy('B Game Token', 'GT-B');
+   await gtbInstance.deployed();
    // console.log(`B Game Token deployed to : ${gtbInstance.address}`);
    console.log(`ETOKEN_ADDRESS=${gtbInstance.address}`);
 
    /**/
    //Approve router on tokens of gta and gtb
    console.log(`Approving Router on Token1`);
-   await tokBoaInstance.approve(
+   const tokBoaTx = await tokBoaInstance.approve(
        routerInstance.address,
        '1000000000000000000000000'
    );
+   await tokBoaTx.wait();
+
    console.log(`Approving Router on Token2`);
-   await gtbInstance.approve(
+   const gtbTx = await gtbInstance.approve(
        routerInstance.address,
        '1000000000000000000000000'
    );
+   await gtbTx.wait();
 
    //Create Pair with Factory and Get Address
    const pairAddress= await factoryInstance.createPair(tokBoaInstance.address, gtbInstance.address);
@@ -85,7 +91,7 @@ async function deploy() {
 
    //Add Liquidity
    console.log(`Adding Liquidity...`);
-   await routerInstance.addLiquidity(
+   const addLiqTx = await routerInstance.addLiquidity(
        tokBoaInstance.address,
        gtbInstance.address,
        '1000000000000000000000',
@@ -95,6 +101,7 @@ async function deploy() {
        deployerAddress,
        blockTime + 100
    );
+   await addLiqTx.wait();
 }
 
 deploy()
