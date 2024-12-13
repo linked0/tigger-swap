@@ -44,7 +44,7 @@ yarn boa:localnet
 
 Approve the tokens of `GRANTER_KEY` user to `GRANTEE` which is in fact `Boa Token Bridge` contract.
 ```
-yarn allow-boa
+yarn allow:localnet
 ```
 Check again balance and allowance
 ```
