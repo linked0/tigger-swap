@@ -21,7 +21,7 @@ TypeError: URL.canParse is not a function
     at async Object.runMain (/Users/jay/.nvm/versions/node/v16.20.2/lib/node_modules/corepack/dist/lib/corepack.cjs:23096:5)
 ```
 
-## Deploy
+## Deploy for Marigold(localnet)
 ```
 npm run deploy:localnet
 ```
@@ -30,6 +30,17 @@ After deploying the contracts, the address printed should be written in `.env`.
 If you want to verify that the contracts are correctly deployed and that liquidity has been added, you should run this script.
 ```
 npm run get-pair:localnet
+```
+
+## Deploy
+```
+npm run deploy:devnet
+```
+After deploying the contracts, the address printed should be written in `.env`.
+
+If you want to verify that the contracts are correctly deployed and that liquidity has been added, you should run this script.
+```
+npm run get-pair:devnet
 ```
 
 ## Mint, transfer, and approve
