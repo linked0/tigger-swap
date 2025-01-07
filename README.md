@@ -3,44 +3,29 @@ This project deploy UniSwapV2 contracts like `UniswapV2Router02` and `UniswapV2F
 
 ## Install
 ```
-npm install
-```
-
-#### Caution
-If you use `yarn install`, the following error occurs. So use `npm install`.
-```
-/Users/jay/.nvm/versions/node/v16.20.2/lib/node_modules/corepack/dist/lib/corepack.cjs:22095
-  const isURL = URL.canParse(range);
-                    ^
-
-TypeError: URL.canParse is not a function
-    at parseSpec (/Users/jay/.nvm/versions/node/v16.20.2/lib/node_modules/corepack/dist/lib/corepack.cjs:22095:21)
-    at loadSpec (/Users/jay/.nvm/versions/node/v16.20.2/lib/node_modules/corepack/dist/lib/corepack.cjs:22158:11)
-    at async Engine.findProjectSpec (/Users/jay/.nvm/versions/node/v16.20.2/lib/node_modules/corepack/dist/lib/corepack.cjs:22348:22)
-    at async Engine.executePackageManagerRequest (/Users/jay/.nvm/versions/node/v16.20.2/lib/node_modules/corepack/dist/lib/corepack.cjs:22404:24)
-    at async Object.runMain (/Users/jay/.nvm/versions/node/v16.20.2/lib/node_modules/corepack/dist/lib/corepack.cjs:23096:5)
+yarn install
 ```
 
 ## Deploy for Marigold(localnet)
 ```
-npm run deploy:localnet
+yarn deploy:localnet
 ```
 After deploying the contracts, the address printed should be written in `.env`.
 
 If you want to verify that the contracts are correctly deployed and that liquidity has been added, you should run this script.
 ```
-npm run get-pair:localnet
+yarn get-pair:localnet
 ```
 
 ## Deploy
 ```
-npm run deploy:devnet
+yarn deploy:devnet
 ```
 After deploying the contracts, the address printed should be written in `.env`.
 
 If you want to verify that the contracts are correctly deployed and that liquidity has been added, you should run this script.
 ```
-npm run get-pair:devnet
+yarn get-pair:devnet
 ```
 
 ## Mint, transfer, and approve
